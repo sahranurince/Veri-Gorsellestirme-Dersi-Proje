@@ -226,6 +226,9 @@ ggplot(yeniveriseti, aes(x = OCD, fill = Instrumentalist )) +
 ```
 ![8](https://user-images.githubusercontent.com/91891099/210836929-7ff4771f-0b7f-4fd1-ab31-c9add2933b88.png)
 
+#### Sonuç
+Bu kısımda elde edilen sonuçlara göre; anksiyete, depresyon ve uykusuzluk hastalıkları 7.5-10 seviyelerinde yoğunlaşmıştır.  Bu aralıkta enstrüman çalan kişilerin yoğunluğu çalmayanlara göre daha fazladır. OKB ise 0-2.5 seviyelerinde yoğunlaşmıştır. Bu aralıkta enstrüman çalmayan kişilerin yoğunluğu çalanlara göre daha fazladır.
+
 ## Beste Yapmanın Mental Hastalıklara Etkisi
 Beste yapmanın mental haslatıklara(Anksiyete,Depresyon,Uykusuzluk Hastalığı,Obsesif Kompulsif Bozukluk) etkisi Donut Grafiği ile görselleştirilmiştir. Görselleştirilmeden önce değişkenler üzerinde çeşitli işlemler uygulanmıştır.
 

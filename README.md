@@ -77,7 +77,8 @@ group_by(`Fav genre`) %>%
        subtitle="Çoklu Çubuk Grafiği")+
   scale_fill_manual(values= met.brewer("Klimt",16))
 ```  
-  
+![1](https://user-images.githubusercontent.com/91891099/210836350-3d51f5c2-1486-4972-b84f-3df37c130038.png)
+
 ### Müzik Türlerinin Depresyona Etkisi
 ```
 y <- yeniveriseti %>%
@@ -103,6 +104,8 @@ ggplot(y2, aes(fill = `Fav genre`,
        subtitle="Çoklu Çubuk Grafiği") +
   scale_fill_manual(values= met.brewer("Klimt",16))
  ``` 
+ ![2](https://user-images.githubusercontent.com/91891099/210836504-9de24e7c-d639-4d90-bd45-3233dacfa444.png)
+
  ### Müzik Türlerinin Uykusuzluk Hastalığına Etkisi
  ```
  v <- yeniveriseti %>%
@@ -128,6 +131,8 @@ ggplot(v2, aes(fill = `Fav genre`,
        subtitle="Çoklu Çubuk Grafiği") +
   scale_fill_manual(values= met.brewer("Klimt",16))
 ```
+![3](https://user-images.githubusercontent.com/91891099/210836583-9da136f2-24ab-4d49-a312-4c5f5f0d393b.png)
+
 ### Müzik Türlerinin Obsesif Kompulsif Bozukluğa Etkisi
 ``` 
 t <- yeniveriseti %>%
@@ -153,6 +158,8 @@ ggplot(t2, aes(fill = `Fav genre`,
        subtitle="Çoklu Çubuk Grafiği") +
   scale_fill_manual(values= met.brewer("Klimt",16))
 ```
+![4](https://user-images.githubusercontent.com/91891099/210836667-db107f72-8cec-4707-a3af-ab6a0dd58145.png)
+
 ## Enstrüman Çalmanın Mental Hastalıklara Etkisi
 Enstrüman çalmanın mental haslatıklara(Anksiyete,Depresyon,Uykusuzluk Hastalığı,Obsesif Kompulsif Bozukluk) etkisi kernel yoğunluk grafiği ile görselleştirilmiştir.
 
@@ -169,6 +176,8 @@ ggplot(yeniveriseti, aes(x = Anxiety, fill = Instrumentalist )) +
                     labels = c("Hayir", "Evet")) +
   theme_bw()
 ```
+![5](https://user-images.githubusercontent.com/91891099/210836742-eabd4cf6-9bc9-437b-82a6-f0d7acd417bb.png)
+
 ### Enstrüman Çalmanın Depresyona Etkisi
 ```
 ggplot(yeniveriseti, aes(x = Depression, fill = Instrumentalist )) +
@@ -182,6 +191,8 @@ ggplot(yeniveriseti, aes(x = Depression, fill = Instrumentalist )) +
                     labels = c("Hayir", "Evet")) +
   theme_bw()
 ``` 
+![6](https://user-images.githubusercontent.com/91891099/210836794-59d2018f-dd49-4a97-a879-26655ce811cc.png)
+
 ### Enstrüman Çalmanın Uykusuzluk Hastalığına Etkisi
 ```
 ggplot(yeniveriseti, aes(x = Insomnia, fill = Instrumentalist )) +
@@ -195,6 +206,8 @@ ggplot(yeniveriseti, aes(x = Insomnia, fill = Instrumentalist )) +
                     labels = c("Hayir", "Evet")) +
   theme_bw()
 ```
+![7](https://user-images.githubusercontent.com/91891099/210836842-865adc5d-54ca-45bc-b2a6-67b5379df5d9.png)
+
 ### Enstrüman Çalmanın Obsesif Kompulsif Bozukluğa Etkisi
 ```
 ggplot(yeniveriseti, aes(x = OCD, fill = Instrumentalist )) +
@@ -208,6 +221,8 @@ ggplot(yeniveriseti, aes(x = OCD, fill = Instrumentalist )) +
                     labels = c("Hayir", "Evet")) +
   theme_bw()
 ```
+![8](https://user-images.githubusercontent.com/91891099/210836929-7ff4771f-0b7f-4fd1-ab31-c9add2933b88.png)
+
 ## Beste Yapmanın Mental Hastalıklara Etkisi
 Beste yapmanın mental haslatıklara(Anksiyete,Depresyon,Uykusuzluk Hastalığı,Obsesif Kompulsif Bozukluk) etkisi Donut Grafiği ile görselleştirilmiştir. Görselleştirilmeden önce değişkenler üzerinde çeşitli işlemler uygulanmıştır.
 
@@ -225,7 +240,9 @@ b1 = yeniveriseti %>% group_by(BesteYapmaDurumu, Anxiety) %>% summarise(a = n())
 
 PieDonut(b1, aes(BesteYapmaDurumu, Anxiety, count=a), title = "Beste Yapmanın Anksiyeteye Etkisi
          Donut Grafigi")
-```        
+```     
+![9](https://user-images.githubusercontent.com/91891099/210837001-1b97670d-e53f-4157-adb5-49e0db0b1039.png)
+
 ### Beste Yapmanın Depresyona Etkisi
 ```
 b2 = yeniveriseti %>% group_by(BesteYapmaDurumu, Depression) %>% summarise(a = n())
@@ -233,6 +250,8 @@ b2 = yeniveriseti %>% group_by(BesteYapmaDurumu, Depression) %>% summarise(a = n
 PieDonut(b2, aes(BesteYapmaDurumu, Depression, count=a), title = "Beste Yapmanın Depresyona Etkisi
          Donut Grafigi")
 ```
+![10](https://user-images.githubusercontent.com/91891099/210837060-d575a80c-1045-4d9b-a826-dd09f88d5eea.png)
+
 ### Beste Yapmanın Uykusuzluk Hastalığına Etkisi
 ```
 b3 = yeniveriseti %>% group_by(BesteYapmaDurumu, Insomnia) %>% summarise(a = n())
@@ -240,6 +259,8 @@ b3 = yeniveriseti %>% group_by(BesteYapmaDurumu, Insomnia) %>% summarise(a = n()
 PieDonut(b3, aes(BesteYapmaDurumu, Insomnia, count=a), title = "Beste Yapmanın Uykusuzluk Hastalığına Etkisi
          Donut Grafigi")
 ```
+![11](https://user-images.githubusercontent.com/91891099/210837136-25ead47c-a117-4414-a6f5-2d98d1616492.png)
+
 ### Beste Yapmanın Obsesif Kompulsif Bozukluğa Etkisi
 ```
 b4 = yeniveriseti %>% group_by(BesteYapmaDurumu, OCD) %>% summarise(a = n())
@@ -247,6 +268,8 @@ b4 = yeniveriseti %>% group_by(BesteYapmaDurumu, OCD) %>% summarise(a = n())
 PieDonut(b4, aes(BesteYapmaDurumu, OCD, count=a), title = "Beste Yapmanın Obsesif Kompulsif Bozukluğa Etkisi
          Donut Grafigi")
 ```      
+![12](https://user-images.githubusercontent.com/91891099/210837200-9a08f76b-5c8e-40e4-8c62-4298f2f049b6.png)
+
 ## Günde Dinlenilen Müzik Süresinin(Saat) Mental Hastalıklara Etkisi
 Günde dinlenilen müzik süresinin mental haslatıklara(Anksiyete,Depresyon,Uykusuzluk Hastalığı,Obsesif Kompulsif Bozukluk) etkisi Sacılım Grafigi Dikdörtgen Gruplama ile görselleştirilmiştir.
 
@@ -262,6 +285,8 @@ ggplot(yeniveriseti, aes(Anxiety, `Hours per day`)) +
        x= "Günde Dinlenen Müzik Süresi(saat)",
        fill= "Kisi Sayısı")
 ```
+![13](https://user-images.githubusercontent.com/91891099/210837248-15d1a9e6-f600-4894-936f-0ff815b8b978.png)
+
 ### Günde Dinlenilen Müzik Süresinin Depresyon ile İlişkisi
 ```
 ggplot(yeniveriseti, aes(Depression, `Hours per day`)) +
@@ -274,6 +299,8 @@ ggplot(yeniveriseti, aes(Depression, `Hours per day`)) +
        x= "Günde Dinlenen Müzik Süresi(saat)",
        fill= "Kisi Sayısı")
  ```      
+ ![14](https://user-images.githubusercontent.com/91891099/210837284-7499e2e6-0165-4ff3-9c4a-11975b1cf661.png)
+ 
  ### Günde Dinlenilen Müzik Süresinin Uykusuzluk Hastalığı ile İlişkisi
  ```
  ggplot(yeniveriseti, aes(Insomnia, `Hours per day`)) +
@@ -286,6 +313,8 @@ ggplot(yeniveriseti, aes(Depression, `Hours per day`)) +
        x= "Günde Dinlenen Müzik Süresi(saat)",
        fill= "Kisi Sayısı")
  ```      
+ ![15](https://user-images.githubusercontent.com/91891099/210837325-581c0e0f-5afe-4d2c-b5a6-4db8955a6cc2.png)
+ 
  ### Günde Dinlenilen Müzik Süresinin Obsesif Kompulsif Bozukluk ile İlişkisi
  ```
  ggplot(yeniveriseti, aes(OCD, `Hours per day`)) +
@@ -298,7 +327,8 @@ ggplot(yeniveriseti, aes(Depression, `Hours per day`)) +
        x= "Günde Dinlenen Müzik Süresi(saat)",
        fill= "Kisi Sayısı")
   ```
-  
+  ![16](https://user-images.githubusercontent.com/91891099/210837376-2fa4c068-e90d-46ea-981c-eae859ea7d41.png)
+
 
 
 

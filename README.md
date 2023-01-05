@@ -3,15 +3,15 @@ Eskişehir Teknik Üniversitesi İstatistik Bölümü lisans programında, 2022-
 
 # Gerekli Paketlerin İndirilmesi
 ### install.packages("ggplot2")     # Veri görselleştirme aracı olarak kullanılır.
-library(ggplot2)
-install.packages("dplyr")     # Veri üzerinde manipülasyon yapmak için kullanılır.
-library(dplyr)
-install.packages("tidyr")     # Veri üzerinde düzenlemeler yapmak için kullanılır.
-library(tidyr)
-install.packages("webr")     # PieDonut Grafiğini çizmek için kullanılır.
-library(webr)
-install.packages("MetBrewer")     # Grafikler üzerinde renklendirme yapmak için kullanılır.
-library(MetBrewer)
+### library(ggplot2)
+### install.packages("dplyr")     # Veri üzerinde manipülasyon yapmak için kullanılır.
+### library(dplyr)
+### install.packages("tidyr")     # Veri üzerinde düzenlemeler yapmak için kullanılır.
+### library(tidyr)
+### install.packages("webr")     # PieDonut Grafiğini çizmek için kullanılır.
+### library(webr)
+### install.packages("MetBrewer")     # Grafikler üzerinde renklendirme yapmak için kullanılır.
+### library(MetBrewer)
 
 # Veri Setinin Kullanıma Hazırlanması
 

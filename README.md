@@ -160,6 +160,9 @@ ggplot(t2, aes(fill = `Fav genre`,
 ```
 ![4](https://user-images.githubusercontent.com/91891099/210836667-db107f72-8cec-4707-a3af-ab6a0dd58145.png)
 
+#### Sonuç
+Bu kısımda elde edilen sonuçlara göre; dört mental hastalığı ele aldığımızda “pop ve rock” müzik türü diğer müzik türlerine göre en yüksek orana sahiptir. Aynı şekilde “latin ve gospel” müzik türü diğer müzik türlerine göre en düşük orana sahiptir. Diğer bir ifadeyle; “pop ve rock” müzik türünün mental hastalıkların seviyesini arttırdığını, “latin ve gospel” müzik türünün ise azalttığını söyleyebiliriz.
+
 ## Enstrüman Çalmanın Mental Hastalıklara Etkisi
 Enstrüman çalmanın mental haslatıklara(Anksiyete,Depresyon,Uykusuzluk Hastalığı,Obsesif Kompulsif Bozukluk) etkisi kernel yoğunluk grafiği ile görselleştirilmiştir.
 
@@ -270,6 +273,9 @@ PieDonut(b4, aes(BesteYapmaDurumu, OCD, count=a), title = "Beste Yapmanın Obses
 ```      
 ![12](https://user-images.githubusercontent.com/91891099/210837200-9a08f76b-5c8e-40e4-8c62-4298f2f049b6.png)
 
+#### Sonuç
+Bu kısımda elde edilen sonuçlara göre, insanların %82’si beste yaparken %18’i beste yapmamaktadır. Beste yapmayan insanların büyük bir çoğunluğunun anksiyete ve depresyon seviyeleri 7-8 civarındayken; uykusuzluk ve OKB seviyeleri ise 0-2 civarındadır. Beste yapan insanların büyük bir çoğunluğunun anksiyete ve depresyon seviyeleri 7-8 civarındayken, uykusuzluk ve OKB seviyeleri 0 ‘dır. Diğer bir deyişle, beste yapmanın mental hastalıklar üzerinde kesin bir etkisi yoktur. Bu seviyeler kişiden kişiye göre değişiklik göstermektedir.
+
 ## Günde Dinlenilen Müzik Süresinin(Saat) Mental Hastalıklara Etkisi
 Günde dinlenilen müzik süresinin mental haslatıklara(Anksiyete,Depresyon,Uykusuzluk Hastalığı,Obsesif Kompulsif Bozukluk) etkisi Sacılım Grafigi Dikdörtgen Gruplama ile görselleştirilmiştir.
 
@@ -285,7 +291,7 @@ ggplot(yeniveriseti, aes(Anxiety, `Hours per day`)) +
        x= "Günde Dinlenen Müzik Süresi(saat)",
        fill= "Kisi Sayısı")
 ```
-![13](https://user-images.githubusercontent.com/91891099/210837248-15d1a9e6-f600-4894-936f-0ff815b8b978.png)
+
 
 ### Günde Dinlenilen Müzik Süresinin Depresyon ile İlişkisi
 ```
@@ -299,7 +305,7 @@ ggplot(yeniveriseti, aes(Depression, `Hours per day`)) +
        x= "Günde Dinlenen Müzik Süresi(saat)",
        fill= "Kisi Sayısı")
  ```      
- ![14](https://user-images.githubusercontent.com/91891099/210837284-7499e2e6-0165-4ff3-9c4a-11975b1cf661.png)
+
  
  ### Günde Dinlenilen Müzik Süresinin Uykusuzluk Hastalığı ile İlişkisi
  ```
@@ -313,7 +319,7 @@ ggplot(yeniveriseti, aes(Depression, `Hours per day`)) +
        x= "Günde Dinlenen Müzik Süresi(saat)",
        fill= "Kisi Sayısı")
  ```      
- ![15](https://user-images.githubusercontent.com/91891099/210837325-581c0e0f-5afe-4d2c-b5a6-4db8955a6cc2.png)
+
  
  ### Günde Dinlenilen Müzik Süresinin Obsesif Kompulsif Bozukluk ile İlişkisi
  ```
@@ -327,7 +333,7 @@ ggplot(yeniveriseti, aes(Depression, `Hours per day`)) +
        x= "Günde Dinlenen Müzik Süresi(saat)",
        fill= "Kisi Sayısı")
   ```
-  ![16](https://user-images.githubusercontent.com/91891099/210837376-2fa4c068-e90d-46ea-981c-eae859ea7d41.png)
+ 
 
 
 

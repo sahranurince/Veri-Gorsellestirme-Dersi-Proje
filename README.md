@@ -64,6 +64,8 @@ group_by(`Fav genre`) %>%
        subtitle="Çoklu Çubuk Grafiği")+
   scale_fill_manual(values= met.brewer("Klimt",16))
   
+![histo1](gorsel.png)
+  
 ### Müzik Türlerinin Depresyona Etkisi
 
 y <- yeniveriseti %>%

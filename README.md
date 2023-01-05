@@ -2,7 +2,7 @@
 Eskişehir Teknik Üniversitesi İstatistik Bölümü lisans programında, 2022-2023 Öğretim Yılı - Güz Dönemi'nde yürütülen Veri Görselleştirme dersi projesinin materyallerini içermektedir.
 
 # Gerekli Paketlerin İndirilmesi
-install.packages("ggplot2")     # Veri görselleştirme aracı olarak kullanılır.
+### install.packages("ggplot2")     # Veri görselleştirme aracı olarak kullanılır.
 library(ggplot2)
 install.packages("dplyr")     # Veri üzerinde manipülasyon yapmak için kullanılır.
 library(dplyr)

@@ -1,6 +1,10 @@
 # Veri-Gorsellestirme-Dersi-Proje
 Eskişehir Teknik Üniversitesi İstatistik Bölümü lisans programında, 2022-2023 Öğretim Yılı - Güz Dönemi'nde yürütülen Veri Görselleştirme dersi projesinin materyallerini içermektedir.
 
+# Özet
+Müzik ruhun gıdasıdır sözü herkes tarafından bilinir. İnsanların bir çoğu günlük zamanının büyük bir kısmını müzik dinlemeye ayırır. Biz de buradan yola çıkarak bu posterde müziğin mental hastalıklara herhangi bir etkisi olup olmadığını çeşitli değişkenler yardımıyla araştırmak istedik. Veri seti Kaggle.com'dan alınmıştır. Bu veri setinde 616 gözlem, 33 değişken vardır. Bu projede kullanılmak için 33 değişkenden 7 tanesi ele alınmıştır. Mental hastalıklar dört ana başlıkta ele alınmıştır. Bunlar; Anksiyete, Depresyon, Uykusuzluk Hastalığı ve Obsesif Kompulsif Bozukluktur. Müziğin etkisi; dinlenilen müzik türü, enstrüman çalma durumu ve beste yapma durumu olarak ele alınmıştır. Görselleştirme için R Programında; Histogram, Kernel Yoğunluk ve Donut Grafikleri oluşturulmuştur.
+https://www.kaggle.com/datasets/catherinerasgaitis/mxmh-survey-results?resource=download
+
 # Gerekli Paketlerin İndirilmesi
 #### install.packages("ggplot2")     # Veri görselleştirme aracı olarak kullanılır.
 #### library(ggplot2)
@@ -12,11 +16,11 @@ Eskişehir Teknik Üniversitesi İstatistik Bölümü lisans programında, 2022-
 #### library(webr)
 #### install.packages("MetBrewer")     # Grafikler üzerinde renklendirme yapmak için kullanılır.
 #### library(MetBrewer)
+#### library(readr)
 
 # Veri Setinin Kullanıma Hazırlanması
 
 ## Veri Setinin Çağırılması
-#### library(readr)
 #### mxmh_survey_results <- read_csv("mxmh_survey_results.csv")
 
 ## Yeni Veri Setinin Oluşturulması
@@ -36,7 +40,7 @@ Müzik türlerinin mental haslatıklara(Anksiyete,Depresyon,Uykusuzluk Hastalı�
 
 ### Müzik Türlerinin Anksiyeteye Etkisi
 İlk olarak veri setini müzik türleri ve anksiyeteye göre gruplanıp, x ismi atanmıştır.
-#### x <- yeniveriseti %>%
+x <- yeniveriseti %>%
   group_by(`Fav genre`,Anxiety) %>%
   summarise(n1=n(),n2=n())
 
@@ -60,7 +64,7 @@ group_by(`Fav genre`) %>%
        subtitle="Çoklu Çubuk Grafiği")+
   scale_fill_manual(values= met.brewer("Klimt",16))
   
- ### Müzik Türlerinin Depresyona Etkisi
+### Müzik Türlerinin Depresyona Etkisi
 
 y <- yeniveriseti %>%
   group_by(`Fav genre`,Depression) %>%
@@ -108,7 +112,7 @@ ggplot(v2, aes(fill = `Fav genre`,
        subtitle="Çoklu Çubuk Grafiği") +
   scale_fill_manual(values= met.brewer("Klimt",16))
 
- ### Müzik Türlerinin Obsesif Kompulsif Bozukluğa Etkisi
+### Müzik Türlerinin Obsesif Kompulsif Bozukluğa Etkisi
  
 t <- yeniveriseti %>%
   group_by(`Fav genre`,OCD) %>%
@@ -192,32 +196,86 @@ Beste yapmanın mental haslatıklara(Anksiyete,Depresyon,Uykusuzluk Hastalığı
 
 Burada veri setinin sütun adı türkçeye çevrilmiştir.
 colnames(yeniveriseti)[7]  <- "BesteYapmaDurumu"
+
 Burada veri setinin sütun içindeki değişkenleri türkçeye çevrilmiştir.
 yeniveriseti$BesteYapmaDurumu<- ifelse(yeniveriseti$BesteYapmaDurumu == "No", "Hayir", "Evet")
 
-# Grafiklerin Çizilmesi
-
+### Beste Yapmanın Anksiyeteye Etkisi
 b1 = yeniveriseti %>% group_by(BesteYapmaDurumu, Anxiety) %>% summarise(a = n())
 
 PieDonut(b1, aes(BesteYapmaDurumu, Anxiety, count=a), title = "Beste Yapmanın Anksiyeteye Etkisi
          Donut Grafigi")
+         
+### Beste Yapmanın Depresyona Etkisi
 b2 = yeniveriseti %>% group_by(BesteYapmaDurumu, Depression) %>% summarise(a = n())
 
 PieDonut(b2, aes(BesteYapmaDurumu, Depression, count=a), title = "Beste Yapmanın Depresyona Etkisi
          Donut Grafigi")
 
+### Beste Yapmanın Uykusuzluk Hastalığına Etkisi
 b3 = yeniveriseti %>% group_by(BesteYapmaDurumu, Insomnia) %>% summarise(a = n())
 
 PieDonut(b3, aes(BesteYapmaDurumu, Insomnia, count=a), title = "Beste Yapmanın Uykusuzluk Hastalığına Etkisi
          Donut Grafigi")
 
+### Beste Yapmanın Obsesif Kompulsif Bozukluğa Etkisi
 b4 = yeniveriseti %>% group_by(BesteYapmaDurumu, OCD) %>% summarise(a = n())
 
 PieDonut(b4, aes(BesteYapmaDurumu, OCD, count=a), title = "Beste Yapmanın Obsesif Kompulsif Bozukluğa Etkisi
          Donut Grafigi")
+       
+## Günde Dinlenilen Müzik Süresinin(Saat) Mental Hastalıklara Etkisi
+Günde dinlenilen müzik süresinin mental haslatıklara(Anksiyete,Depresyon,Uykusuzluk Hastalığı,Obsesif Kompulsif Bozukluk) etkisi Sacılım Grafigi Dikdörtgen Gruplama ile görselleştirilmiştir.
+
+### Günde Dinlenilen Müzik Süresinin Anksiyete ile İlişkisi
+
+ggplot(yeniveriseti, aes(Anxiety, `Hours per day`)) +
+  geom_bin2d(bins = 10, color ="white")+
+  scale_fill_gradient(low =  "#00AFBB", high = "#FC4E07")+
+  theme_minimal()+
+  labs(title = "Günde Dinlenilen Müzik Süresinin Anksiyeteye Etkisi",
+       subtitle = "Saçılım Grafigi ile Dikdörtgen Gruplama",
+       y= "Anksiyete Seviyeleri",
+       x= "Günde Dinlenen Müzik Süresi(saat)",
+       fill= "Kisi Sayısı")
+
+### Günde Dinlenilen Müzik Süresinin Depresyon ile İlişkisi
+
+ggplot(yeniveriseti, aes(Depression, `Hours per day`)) +
+  geom_bin2d(bins = 10, color ="white")+
+  scale_fill_gradient(low =  "#00AFBB", high = "#FC4E07")+
+  theme_minimal() +
+  labs(title = "Günde Dinlenilen Müzik Süresinin Depresyona Etkisi",
+       subtitle = "Sacılım Grafigi ile Dikdörtgen Gruplama",
+       y= "Depresyon Seviyeleri",
+       x= "Günde Dinlenen Müzik Süresi(saat)",
+       fill= "Kisi Sayısı")
+       
  
-  
-  
+ ### Günde Dinlenilen Müzik Süresinin Uykusuzluk Hastalığı ile İlişkisi
+ 
+ ggplot(yeniveriseti, aes(Insomnia, `Hours per day`)) +
+  geom_bin2d(bins = 10, color ="white")+
+  scale_fill_gradient(low =  "#00AFBB", high = "#FC4E07")+
+  theme_minimal()+
+  labs(title = "Günde Dinlenilen Müzik Süresinin Uykusuzluk Hastaligina Etkisi",
+       subtitle = "Sacılım Grafigi ile Dikdörtgen Gruplama",
+       y= "Uykusuzluk Hastaligi Seviyeleri",
+       x= "Günde Dinlenen Müzik Süresi(saat)",
+       fill= "Kisi Sayısı")
+       
+ 
+ ### Günde Dinlenilen Müzik Süresinin Obsesif Kompulsif Bozukluk ile İlişkisi
+ 
+ ggplot(yeniveriseti, aes(OCD, `Hours per day`)) +
+  geom_bin2d(bins = 10, color ="white")+
+  scale_fill_gradient(low =  "#00AFBB", high = "#FC4E07")+
+  theme_minimal()+
+  labs(title = "Günde Dinlenilen Müzik Süresinin Obsesif Kompulsif Bozukluga Etkisi",
+       subtitle = "Sacılım Grafigi ile Dikdörtgen Gruplama",
+       y= "Obsesif Kompulsif Bozukluga Seviyeleri",
+       x= "Günde Dinlenen Müzik Süresi(saat)",
+       fill= "Kisi Sayısı")
   
   
 
